@@ -1,342 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imtiaz Hussain Laskar | Trust & Safety Professional</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 0 20px;
-      color: #222;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #1a1a1a;
-      margin-bottom: 5px;
-    }
-    .subtitle {
-      color: #555;
-      font-size: 18px;
-      margin-top: 0;
-    }
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 6px;
-      margin-top: 50px;
-      color: #1a1a1a;
-    }
-    .job-title {
-      font-weight: bold;
-      margin-bottom: 0;
-    }
-    .job-meta {
-      color: #666;
-      font-size: 14px;
-      margin-top: 2px;
-      margin-bottom: 10px;
-    }
-    a {
-      color: #0a66c2;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .cert-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      margin-top: 15px;
-    }
-    .cert-table th, .cert-table td {
-      text-align: left;
-      padding: 10px 8px;
-      border-bottom: 1px solid #eee;
-    }
-    .cert-table th {
-      color: #555;
-      font-weight: 600;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .cert-table td:last-child {
-      font-family: "Courier New", monospace;
-      font-size: 12px;
-      color: #777;
-    }
-    .lang-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px 30px;
-      margin-top: 15px;
-    }
-    .lang-name {
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-    .lang-level {
-      color: #666;
-      font-size: 13px;
-      margin-top: 0;
-    }
-    .skills-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 15px;
-    }
-    .skill-tag {
-      background: #f3f4f6;
-      color: #333;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      border: 1px solid #e5e5e5;
-    }
-    .skills-subheading {
-      font-size: 13px;
-      font-weight: 600;
-      color: #555;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
-    .article-title {
-      font-weight: bold;
-      margin-bottom: 3px;
-    }
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-      color: #888;
-      font-size: 14px;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imtiaz Hussain Laskar | Trust & Safety Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B1220;
+    --bg-panel: #111A2E;
+    --bg-panel-hover: #15203A;
+    --border: #223049;
+    --border-soft: #1A2438;
+    --text: #E7ECF5;
+    --text-dim: #93A1BD;
+    --text-faint: #5C6B8A;
+    --amber: #F5A623;
+    --amber-dim: #8A6420;
+    --cyan: #3FD1D6;
+    --green: #4ADE80;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(245,166,35,0.08), transparent),
+      radial-gradient(ellipse 700px 500px at 100% 20%, rgba(63,209,214,0.06), transparent);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .shell {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 56px;
+  }
+
+  @media (max-width: 860px) {
+    .shell { grid-template-columns: 1fr; }
+    .index-rail { display: none; }
+  }
+
+  .index-rail { position: sticky; top: 48px; align-self: start; padding-top: 110px; }
+  .index-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .index-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    font-size: 13px;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    transition: color 0.15s ease;
+  }
+  .index-link:hover { color: var(--text); text-decoration: none; }
+  .index-link .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--text-faint);
+    flex-shrink: 0;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+  }
+  .index-link.active { color: var(--amber); }
+  .index-link.active .dot { background: var(--amber); box-shadow: 0 0 0 3px rgba(245,166,35,0.18); }
+
+  .hero {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  .hero-photo {
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--amber-dim);
+    box-shadow: 0 0 0 6px rgba(245,166,35,0.07);
+    flex-shrink: 0;
+  }
+  .hero-text { flex: 1; min-width: 260px; }
+
+  .reflection {
+    position: relative;
+    margin: 0 -24px;
+    padding: 0;
+    border-bottom: none;
+    overflow: hidden;
+  }
+  .reflection-photo {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    filter: grayscale(15%);
+  }
+  .reflection-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11,18,32,0.1) 0%, rgba(11,18,32,0.55) 60%, rgba(11,18,32,0.95) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+  }
+  .reflection-quote { max-width: 560px; }
+  .reflection-quote .mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .reflection-quote blockquote {
+    margin: 0 0 10px 0;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .reflection-quote cite {
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 22px;
+    letter-spacing: 0.04em;
+  }
+  .status-row .pulse {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(74,222,128,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+  }
+  h1.name {
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .role-line { font-size: 18px; color: var(--text-dim); margin: 0 0 26px 0; font-weight: 500; }
+  .role-line .accent { color: var(--amber); }
+
+  .contact-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .contact-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--bg-panel);
+    padding: 7px 14px;
+    border-radius: 6px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .contact-pill:hover { border-color: var(--amber-dim); color: var(--text); text-decoration: none; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--border-soft); scroll-margin-top: 40px; }
+  section:last-of-type { border-bottom: none; }
+
+  .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 30px; }
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-faint); }
+  h2.section-title { font-size: 22px; font-weight: 700; color: #fff; margin: 0; letter-spacing: -0.01em; }
+
+  .lead-text { color: var(--text-dim); font-size: 16px; max-width: 640px; }
+
+  .role-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px; padding: 26px 28px; margin-bottom: 18px; }
+  .role-card-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .role-title { font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0; }
+  .role-org { color: var(--cyan); font-weight: 500; }
+  .role-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  .role-card ul { margin: 0; padding-left: 0; list-style: none; }
+  .role-card li { position: relative; padding-left: 20px; margin-bottom: 12px; color: var(--text-dim); font-size: 14.5px; }
+  .role-card li:last-child { margin-bottom: 0; }
+  .role-card li::before { content: "▸"; position: absolute; left: 0; color: var(--amber); font-size: 12px; top: 2px; }
+
+  .lang-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .lang-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .lang-name { font-weight: 700; color: #fff; font-size: 14.5px; margin-bottom: 8px; }
+  .lang-bar-track { height: 4px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 7px; }
+  .lang-bar-fill { height: 100%; background: linear-gradient(90deg, var(--amber-dim), var(--amber)); }
+  .lang-level { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-faint); }
+
+  .skills-subhead {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+    margin: 26px 0 12px 0;
+  }
+  .skills-subhead:first-child { margin-top: 0; }
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-size: 13px;
+    color: var(--text-dim);
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    padding: 7px 13px;
+    border-radius: 20px;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .skill-tag:hover { border-color: var(--cyan); color: var(--text); background: var(--bg-panel-hover); }
+
+  .cert-table-wrap { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; overflow-x: auto; }
+  table.cert-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .cert-table th {
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.015);
+    white-space: nowrap;
+  }
+  .cert-table td { padding: 14px 18px; border-bottom: 1px solid var(--border-soft); color: var(--text-dim); }
+  .cert-table tr:last-child td { border-bottom: none; }
+  .cert-table tr:hover td { background: rgba(255,255,255,0.015); color: var(--text); }
+  .cert-table td:first-child { color: var(--text); font-weight: 500; }
+  .cert-table td:last-child { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-faint); white-space: nowrap; }
+
+  .project-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 10px; padding: 26px 28px; margin-bottom: 18px; }
+  .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .project-title { font-size: 16px; font-weight: 700; color: #fff; margin: 0; }
+  .project-date { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-faint); }
+  .project-card ul { margin: 14px 0 18px 0; padding-left: 0; list-style: none; }
+  .project-card li { position: relative; padding-left: 20px; margin-bottom: 12px; color: var(--text-dim); font-size: 14.5px; }
+  .project-card li::before { content: "▸"; position: absolute; left: 0; color: var(--cyan); font-size: 12px; top: 2px; }
+  .view-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+  }
+  .view-link:hover { background: rgba(245,166,35,0.08); text-decoration: none; }
+
+  .article-card {
+    display: block;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    transition: border-color 0.15s ease;
+  }
+  .article-card:hover { border-color: var(--cyan); text-decoration: none; }
+  .article-title { color: #fff; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+  .article-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); }
+
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; padding: 16px 0; border-bottom: 1px solid var(--border-soft); }
+  .edu-row:last-child { border-bottom: none; }
+  .edu-degree { font-weight: 600; color: var(--text); }
+  .edu-school { color: var(--text-dim); font-size: 14px; }
+  .edu-year { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-faint); }
+
+  footer { padding: 40px 0 90px 0; text-align: left; color: var(--text-faint); font-size: 12.5px; font-family: 'JetBrains Mono', monospace; }
+</style>
 </head>
 <body>
 
-  <h1>Imtiaz Laskar</h1>
-  <p class="subtitle">Trust & Safety Analyst | Policy, Risk & Digital Rights</p>
-  <p>
-    Email: Imtiazh526@gmail.com |
-    <a href="https://linkedin.com/in/imtiazhlaskar" target="_blank">LinkedIn</a> |
-    <a href="https://medium.com/@imtiaz.laskar96" target="_blank">Medium</a>
-  </p>
+<div class="shell">
 
-  <h2>About</h2>
-  <p>3+ years across Trust & Safety, content moderation, advertising compliance, and risk operations in large-scale digital ecosystems. Focused on policy analysis, OSINT investigations, and data-driven decision making.</p>
+  <nav class="index-rail" id="indexRail">
+    <div class="index-eyebrow">// On this page</div>
+    <a href="#about" class="index-link"><span class="dot"></span>About</a>
+    <a href="#experience" class="index-link"><span class="dot"></span>Experience</a>
+    <a href="#languages" class="index-link"><span class="dot"></span>Languages</a>
+    <a href="#skills" class="index-link"><span class="dot"></span>Skills</a>
+    <a href="#certifications" class="index-link"><span class="dot"></span>Certifications</a>
+    <a href="#projects" class="index-link"><span class="dot"></span>Projects</a>
+    <a href="#writing" class="index-link"><span class="dot"></span>Writing</a>
+    <a href="#education" class="index-link"><span class="dot"></span>Education</a>
+  </nav>
 
-  <h2>Experience</h2>
+  <main>
 
-  <p class="job-title">Senior Associate, T&S - Ads Policy & Security — Accenture (Search Platform)</p>
-  <p class="job-meta">May 2024 – Jul 2025 | Hyderabad, India</p>
-  <ul>
-    <li>Managed ad policy reviews across EMEA & APAC markets,<br>maintaining strict SLA compliance for priority queues</li>
-    <li>Conducted OSINT-based due diligence for advertiser certification,<br>reducing false positives in regulated category reviews</li>
-    <li>Investigated abuse cases involving malware, phishing, and cloaking,<br>identifying emerging threat patterns to strengthen enforcement</li>
-    <li>Improved workflows through AI-assisted processes and prompt engineering,<br>boosting team productivity and supporting new hire onboarding</li>
-  </ul>
+    <header class="hero">
+      <img class="hero-photo" src="images/profile-cover.jpg" alt="Imtiaz Laskar">
+      <div class="hero-text">
+        <div class="status-row"><span class="pulse"></span>AVAILABLE FOR OPPORTUNITIES</div>
+        <h1 class="name">Imtiaz Laskar</h1>
+        <p class="role-line">Trust & Safety Analyst — <span class="accent">Policy, Risk & Digital Rights</span></p>
+        <div class="contact-row">
+          <a class="contact-pill" href="mailto:Imtiazh526@gmail.com">Imtiazh526@gmail.com</a>
+          <a class="contact-pill" href="https://linkedin.com/in/imtiazhlaskar" target="_blank">LinkedIn</a>
+          <a class="contact-pill" href="https://medium.com/@imtiaz.laskar96" target="_blank">Medium</a>
+        </div>
+      </div>
+    </header>
 
-  <p class="job-title">Associate, T&S - Community Operations — Genpact (Social Media)</p>
-  <p class="job-meta">Feb 2023 – May 2024 | Hyderabad, India</p>
-  <ul>
-    <li>Reviewed high-risk content across India & South Asia markets,<br>applying Assamese, Bengali & Hindi fluency for cultural context</li>
-    <li>Maintained high accuracy in severe escalations including NCII,<br>harassment, misinformation, and child safety cases</li>
-    <li>Analyzed identity and account integrity cases at scale,<br>using data patterns to support trust & safety model improvements</li>
-  </ul>
+    <section id="about">
+      <div class="section-head">
+        <span class="section-num mono">01</span>
+        <h2 class="section-title">About</h2>
+      </div>
+      <p class="lead-text">3+ years across Trust & Safety, content moderation, advertising compliance, and risk operations in large-scale digital ecosystems. Focused on policy analysis, OSINT investigations, and data-driven decision making.</p>
+    </section>
 
-  <h2>Languages</h2>
-  <div class="lang-grid">
-    <div>
-      <p class="lang-name">Assamese</p>
-      <p class="lang-level">Native or bilingual proficiency</p>
-    </div>
-    <div>
-      <p class="lang-name">Bengali</p>
-      <p class="lang-level">Native or bilingual proficiency</p>
-    </div>
-    <div>
-      <p class="lang-name">English</p>
-      <p class="lang-level">Full professional proficiency</p>
-    </div>
-    <div>
-      <p class="lang-name">Hindi</p>
-      <p class="lang-level">Professional working proficiency</p>
-    </div>
-    <div>
-      <p class="lang-name">Sylheti</p>
-      <p class="lang-level">Native or bilingual proficiency</p>
-    </div>
-    <div>
-      <p class="lang-name">Nagamese</p>
-      <p class="lang-level">Limited working proficiency</p>
-    </div>
-    <div>
-      <p class="lang-name">Urdu</p>
-      <p class="lang-level">Elementary proficiency</p>
-    </div>
-  </div>
+    <section id="experience">
+      <div class="section-head">
+        <span class="section-num mono">02</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
 
-  <h2>Skills</h2>
+      <div class="role-card">
+        <div class="role-card-top">
+          <div>
+            <p class="role-title">Senior Associate, T&S – Ads Policy & Security</p>
+            <span class="role-org">Accenture (Search Platform)</span>
+          </div>
+          <span class="role-date mono">MAY 2024 – JUL 2025 · HYDERABAD</span>
+        </div>
+        <ul>
+          <li>Managed ad policy reviews across EMEA & APAC markets, maintaining strict SLA compliance for priority queues</li>
+          <li>Conducted OSINT-based due diligence for advertiser certification, reducing false positives in regulated category reviews</li>
+          <li>Investigated abuse cases involving malware, phishing, and cloaking, identifying emerging threat patterns to strengthen enforcement</li>
+          <li>Improved workflows through AI-assisted processes and prompt engineering, boosting team productivity and supporting new hire onboarding</li>
+        </ul>
+      </div>
 
-  <p class="skills-subheading">Core Competencies</p>
-  <div class="skills-wrap">
-    <span class="skill-tag">Ads Policy</span>
-    <span class="skill-tag">Content Analysis</span>
-    <span class="skill-tag">Digital Media Code of Ethics</span>
-    <span class="skill-tag">Crisis & Reputation Management</span>
-    <span class="skill-tag">Cross-Functional Collaboration</span>
-    <span class="skill-tag">Digital Rights</span>
-    <span class="skill-tag">Privacy Laws & Data Protection</span>
-    <span class="skill-tag">Escalation Management</span>
-    <span class="skill-tag">Google Sheets</span>
-    <span class="skill-tag">Law Enforcement Policies</span>
-    <span class="skill-tag">Policy Analysis</span>
-    <span class="skill-tag">Policy Management</span>
-    <span class="skill-tag">Problem Solving</span>
-    <span class="skill-tag">Process Improvement</span>
-    <span class="skill-tag">Product Policy</span>
-    <span class="skill-tag">Project Management</span>
-    <span class="skill-tag">Public Policy</span>
-    <span class="skill-tag">Qualitative Research</span>
-    <span class="skill-tag">Quality Assurance</span>
-    <span class="skill-tag">Qualtrics</span>
-    <span class="skill-tag">Regulatory Requirements</span>
-    <span class="skill-tag">Risk Assessments</span>
-    <span class="skill-tag">Social Media</span>
-    <span class="skill-tag">Stakeholder Management</span>
-    <span class="skill-tag">Storytelling</span>
-    <span class="skill-tag">Strategic Thinking</span>
-    <span class="skill-tag">Thought Leadership</span>
-    <span class="skill-tag">User Experience</span>
-  </div>
+      <div class="role-card">
+        <div class="role-card-top">
+          <div>
+            <p class="role-title">Associate, T&S – Community Operations</p>
+            <span class="role-org">Genpact (Social Media)</span>
+          </div>
+          <span class="role-date mono">FEB 2023 – MAY 2024 · HYDERABAD</span>
+        </div>
+        <ul>
+          <li>Reviewed high-risk content across India & South Asia markets, applying Assamese, Bengali & Hindi fluency for cultural context</li>
+          <li>Maintained high accuracy in severe escalations including NCII, harassment, misinformation, and child safety cases</li>
+          <li>Analyzed identity and account integrity cases at scale, using data patterns to support trust & safety model improvements</li>
+        </ul>
+      </div>
+    </section>
 
-  <p class="skills-subheading">Technical</p>
-  <div class="skills-wrap">
-    <span class="skill-tag">Analytical</span>
-    <span class="skill-tag">Anti-Abuse</span>
-    <span class="skill-tag">Automation</span>
-    <span class="skill-tag">Data Analytics</span>
-    <span class="skill-tag">Data Extraction</span>
-    <span class="skill-tag">Data Privacy</span>
-    <span class="skill-tag">Generative AI</span>
-    <span class="skill-tag">Google Workspace</span>
-    <span class="skill-tag">Open Source Intelligence</span>
-    <span class="skill-tag">Quantitative Research</span>
-    <span class="skill-tag">Research</span>
-    <span class="skill-tag">SQL</span>
-    <span class="skill-tag">Salesforce</span>
-    <span class="skill-tag">Workflow Automation</span>
-  </div>
+    <section id="languages">
+      <div class="section-head">
+        <span class="section-num mono">03</span>
+        <h2 class="section-title">Languages</h2>
+      </div>
+      <div class="lang-grid">
+        <div class="lang-card">
+          <div class="lang-name">Assamese</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+          <div class="lang-level">NATIVE / BILINGUAL</div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Bengali</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+          <div class="lang-level">NATIVE / BILINGUAL</div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Sylheti</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+          <div class="lang-level">NATIVE / BILINGUAL</div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">English</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:90%"></div></div>
+          <div class="lang-level">FULL PROFESSIONAL</div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Hindi</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:75%"></div></div>
+          <div class="lang-level">PROFESSIONAL WORKING</div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Nagamese</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:45%"></div></div>
+          <div class="lang-level">LIMITED WORKING</div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-name">Urdu</div>
+          <div class="lang-bar-track"><div class="lang-bar-fill" style="width:25%"></div></div>
+          <div class="lang-level">ELEMENTARY</div>
+        </div>
+      </div>
+    </section>
 
-  <h2>Certifications</h2>
-  <table class="cert-table">
-    <tr>
-      <th>Certificate</th>
-      <th>Issued By</th>
-      <th>Issued</th>
-      <th>Credential ID</th>
-    </tr>
-    <tr>
-      <td>Google AI Professional</td>
-      <td>Google</td>
-      <td>Mar 2026</td>
-      <td>O15U3RL2AARP</td>
-    </tr>
-    <tr>
-      <td>Responsible Generative AI</td>
-      <td>Coursera</td>
-      <td>Dec 2025</td>
-      <td>0NWLLKC2773E</td>
-    </tr>
-    <tr>
-      <td>Open-source Intelligence (OSINT)</td>
-      <td>Basel Institute on Governance</td>
-      <td>Jun 2025</td>
-      <td>—</td>
-    </tr>
-    <tr>
-      <td>Certified Anti-Money Laundering and Compliance Expert (CAML)</td>
-      <td>Udemy</td>
-      <td>Jul 2025</td>
-      <td>UC-08939f31</td>
-    </tr>
-    <tr>
-      <td>Google Project Management: Professional Certificate</td>
-      <td>Google</td>
-      <td>Nov 2024</td>
-      <td>JCULAMRHYZP8</td>
-    </tr>
-    <tr>
-      <td>McKinsey.org Forward Program</td>
-      <td>McKinsey & Company</td>
-      <td>Dec 2025</td>
-      <td>—</td>
-    </tr>
-    <tr>
-      <td>Lean Six Sigma – Yellow Belt</td>
-      <td>Packt</td>
-      <td>Oct 2025</td>
-      <td>CW0SM3T2XG0H</td>
-    </tr>
-    <tr>
-      <td>Python Data Analytics</td>
-      <td>Coursera</td>
-      <td>Sep 2025</td>
-      <td>ASB7KRX6IL5O</td>
-    </tr>
-    <tr>
-      <td>Data Analysis with Spreadsheets and SQL</td>
-      <td>Coursera</td>
-      <td>Aug 2025</td>
-      <td>Y72GHEMUB7PV</td>
-    </tr>
-    <tr>
-      <td>Workflow Specialist</td>
-      <td>Asana</td>
-      <td>Nov 2025</td>
-      <td>—</td>
-    </tr>
-  </table>
+    <section id="skills">
+      <div class="section-head">
+        <span class="section-num mono">04</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
 
-  <h2>Data Analytics Projects</h2>
+      <div class="skills-subhead">Core Competencies</div>
+      <div class="skills-wrap">
+        <span class="skill-tag">Ads Policy</span>
+        <span class="skill-tag">Content Analysis</span>
+        <span class="skill-tag">Digital Media Code of Ethics</span>
+        <span class="skill-tag">Crisis & Reputation Management</span>
+        <span class="skill-tag">Cross-Functional Collaboration</span>
+        <span class="skill-tag">Digital Rights</span>
+        <span class="skill-tag">Privacy Laws & Data Protection</span>
+        <span class="skill-tag">Escalation Management</span>
+        <span class="skill-tag">Google Sheets</span>
+        <span class="skill-tag">Law Enforcement Policies</span>
+        <span class="skill-tag">Policy Analysis</span>
+        <span class="skill-tag">Policy Management</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Process Improvement</span>
+        <span class="skill-tag">Product Policy</span>
+        <span class="skill-tag">Project Management</span>
+        <span class="skill-tag">Public Policy</span>
+        <span class="skill-tag">Qualitative Research</span>
+        <span class="skill-tag">Quality Assurance</span>
+        <span class="skill-tag">Qualtrics</span>
+        <span class="skill-tag">Regulatory Requirements</span>
+        <span class="skill-tag">Risk Assessments</span>
+        <span class="skill-tag">Risk Policy</span>
+        <span class="skill-tag">Social Media</span>
+        <span class="skill-tag">Stakeholder Management</span>
+        <span class="skill-tag">Storytelling</span>
+        <span class="skill-tag">Strategic Thinking</span>
+        <span class="skill-tag">Thought Leadership</span>
+        <span class="skill-tag">User Experience</span>
+      </div>
 
-  <p class="job-title">Regional Platform Integrity & Risk Monitoring — Looker Dashboard</p>
-  <ul>
-    <li>Designed an automated incident tracking system in Google Sheets using<br>SQL-lite Query logic for regional risk aggregation</li>
-    <li>Used Google Gemini and prompt engineering for AI workflow automation,<br>reducing technical preparation lifecycle by 40%</li>
-    <li>Built an interactive Looker Studio dashboard that identified a 30% variance<br>between Incident Volume and Risk Severity</li>
-  </ul>
-  
-  <p class="job-meta">Apr 2026</p>
-  <ul>
-    <li>Built an automated quality engine to monitor AI enforcement accuracy<br>across ANZ, Brazil, NORAM & India against human policy review</li>
-    <li>Created SQL-based metrics in Looker Studio tracking real-time Precision<br>Grade at 66.44%, with root-cause analysis via interactive dashboards</li>
-    <li>Diagnosed language nuance as the key accuracy gap at 48.98%,<br>and added SLA alerts for accuracy dropping below 85%</li>
-  </ul>
+      <div class="skills-subhead">Technical</div>
+      <div class="skills-wrap">
+        <span class="skill-tag">Adaptability</span>
+        <span class="skill-tag">Analytical</span>
+        <span class="skill-tag">Anti-Abuse</span>
+        <span class="skill-tag">Automation</span>
+        <span class="skill-tag">Data Analytics</span>
+        <span class="skill-tag">Data Extraction</span>
+        <span class="skill-tag">Data Privacy</span>
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">Google Workspace</span>
+        <span class="skill-tag">Open Source Intelligence</span>
+        <span class="skill-tag">Quantitative Research</span>
+        <span class="skill-tag">Research</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Salesforce</span>
+        <span class="skill-tag">Trend Identification</span>
+        <span class="skill-tag">Workflow Automation</span>
+      </div>
+    </section>
 
-  <h2>Writing</h2>
+    <section id="certifications">
+      <div class="section-head">
+        <span class="section-num mono">05</span>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+      <div class="cert-table-wrap">
+        <table class="cert-table">
+          <tr>
+            <th>Certificate</th>
+            <th>Issued By</th>
+            <th>Issued</th>
+            <th>Credential ID</th>
+          </tr>
+          <tr><td>Google AI Professional</td><td>Google</td><td>Mar 2026</td><td>O15U3RL2AARP</td></tr>
+          <tr><td>Responsible Generative AI</td><td>Coursera</td><td>Dec 2025</td><td>0NWLLKC2773E</td></tr>
+          <tr><td>Open-source Intelligence (OSINT)</td><td>Basel Institute on Governance</td><td>Jun 2025</td><td>—</td></tr>
+          <tr><td>Certified Anti-Money Laundering and Compliance Expert (CAML)</td><td>Udemy</td><td>Jul 2025</td><td>UC-08939f31</td></tr>
+          <tr><td>Google Project Management: Professional Certificate</td><td>Google</td><td>Nov 2024</td><td>JCULAMRHYZP8</td></tr>
+          <tr><td>McKinsey.org Forward Program</td><td>McKinsey & Company</td><td>Dec 2025</td><td>—</td></tr>
+          <tr><td>Lean Six Sigma – Yellow Belt</td><td>Packt</td><td>Oct 2025</td><td>CW0SM3T2XG0H</td></tr>
+          <tr><td>Python Data Analytics</td><td>Coursera</td><td>Sep 2025</td><td>ASB7KRX6IL5O</td></tr>
+          <tr><td>Data Analysis with Spreadsheets and SQL</td><td>Coursera</td><td>Aug 2025</td><td>Y72GHEMUB7PV</td></tr>
+          <tr><td>Workflow Specialist</td><td>Asana</td><td>Nov 2025</td><td>—</td></tr>
+        </table>
+      </div>
+    </section>
 
-  <p class="article-title">Reframing Digital Childhood: India's Emerging Framework for Child Safety and Online Rights</p>
-  <p><a href="https://medium.com/@imtiaz.laskar96/reframing-digital-childhood-indias-emerging-framework-for-child-safety-and-online-rights-80c9c5330b56" target="_blank">Read on Medium →</a></p>
+    <section id="projects">
+      <div class="section-head">
+        <span class="section-num mono">06</span>
+        <h2 class="section-title">Data Analytics Projects</h2>
+      </div>
 
-  <p class="article-title">Who Owns Your Face? Deepfakes, AI, and the Future of Personality Rights</p>
-  <p><a href="https://medium.com/@imtiaz.laskar96/who-owns-your-face-deepfakes-ai-and-the-future-of-personality-rights-25a4f07ac274" target="_blank">Read on Medium →</a></p>
+      <div class="project-card">
+        <div class="project-top">
+          <p class="project-title">Regional Platform Integrity & Risk Monitoring — Looker Dashboard</p>
+        </div>
+        <ul>
+          <li>Designed an automated incident tracking system in Google Sheets using SQL-lite Query logic for regional risk aggregation</li>
+          <li>Used Google Gemini and prompt engineering for AI workflow automation, reducing technical preparation lifecycle by 40%</li>
+          <li>Built an interactive Looker Studio dashboard that identified a 30% variance between Incident Volume and Risk Severity</li>
+        </ul>
+        <a class="view-link" href="https://lookerstudio.google.com/u/0/reporting/4e53f385-d353-4db7-9854-02ae22a9111e" target="_blank">VIEW DASHBOARD →</a>
+      </div>
 
-  <h2>Education</h2>
-  <p>Master's in Human Rights — Jamia Hamdard, 2020</p>
-  <p>B.A. Political Science & Geography — Delhi University, 2018</p>
+      <div class="project-card">
+        <div class="project-top">
+          <p class="project-title">Audit & Precision Dashboard</p>
+          <span class="project-date mono">APR 2026</span>
+        </div>
+        <ul>
+          <li>Built an automated quality engine to monitor AI enforcement accuracy across ANZ, Brazil, NORAM & India against human policy review</li>
+          <li>Created SQL-based metrics in Looker Studio tracking real-time Precision Grade at 66.44%, with root-cause analysis via interactive dashboards</li>
+          <li>Diagnosed language nuance as the key accuracy gap at 48.98%, and added SLA alerts for accuracy dropping below 85%</li>
+        </ul>
+        <a class="view-link" href="https://lookerstudio.google.com/reporting/18c49ac8-e6f4-4a16-bdc2-66c6dfe01fc4" target="_blank">VIEW DASHBOARD →</a>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2026 Imtiaz Hussain Laskar. Built with HTML & CSS.</p>
-  </footer>
+    <section id="writing">
+      <div class="section-head">
+        <span class="section-num mono">07</span>
+        <h2 class="section-title">Writing</h2>
+      </div>
+
+      <a class="article-card" href="https://medium.com/@imtiaz.laskar96/reframing-digital-childhood-indias-emerging-framework-for-child-safety-and-online-rights-80c9c5330b56" target="_blank">
+        <div class="article-title">Reframing Digital Childhood: India's Emerging Framework for Child Safety and Online Rights</div>
+        <div class="article-meta">READ ON MEDIUM →</div>
+      </a>
+
+      <a class="article-card" href="https://medium.com/@imtiaz.laskar96/who-owns-your-face-deepfakes-ai-and-the-future-of-personality-rights-25a4f07ac274" target="_blank">
+        <div class="article-title">Who Owns Your Face? Deepfakes, AI, and the Future of Personality Rights</div>
+        <div class="article-meta">READ ON MEDIUM →</div>
+      </a>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <span class="section-num mono">08</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-degree">Master's in Human Rights</div>
+          <div class="edu-school">Jamia Hamdard</div>
+        </div>
+        <span class="edu-year mono">2020</span>
+      </div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-degree">B.A. Political Science & Geography</div>
+          <div class="edu-school">Delhi University</div>
+        </div>
+        <span class="edu-year mono">2018</span>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <img class="reflection-photo" src="images/closing-reflection.jpg" alt="Looking out at the horizon">
+      <div class="reflection-overlay">
+        <div class="reflection-quote">
+          <div class="mark">// closing note</div>
+          <blockquote>"What stands in the way becomes the way."</blockquote>
+          <cite>— Marcus Aurelius, Meditations</cite>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 IMTIAZ HUSSAIN LASKAR — BUILT WITH HTML & CSS</footer>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.index-link');
+
+  function onScroll() {
+    let current = '';
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 140 && rect.bottom >= 140) {
+        current = sec.id;
+      }
+    });
+    links.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+</script>
 
 </body>
 </html>
